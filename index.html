@@ -11,8 +11,17 @@
 <body>
   <main>
     <h1>Vanilla JavaScript App</h1>
+    <p>Loading content from the API: <b id="name">...</b></p>
+    </main>
 
-    <iframe width="100%" height="500px" src="https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript" ></iframe>
+    <script>
+    (async function() {
+        const { text } = await( await fetch(`/api/message`)).json();
+        document.querySelector('#name').textContent = text;
+    }())
+    </script>
+
+    <!-- <iframe width="100%" height="500px" src="https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript" ></iframe> -->
     
   </main>
 </body>
