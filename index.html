@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' *.microsoft.com; img-src *">
   <link rel="stylesheet" href="styles.css">
   <title>Vanilla JavaScript App</title>
 </head>
@@ -11,17 +12,8 @@
 <body>
   <main>
     <h1>Vanilla JavaScript App</h1>
-    <p>Loading content from the API: <b id="name">...</b></p>
-    </main>
 
-    <script>
-    (async function() {
-        const { text } = await( await fetch(`/api/message`)).json();
-        document.querySelector('#name').textContent = text;
-    }())
-    </script>
-
-    <!-- <iframe width="100%" height="500px" src="https://docs.microsoft.com/en-us/azure/static-web-apps/getting-started?tabs=vanilla-javascript" ></iframe> -->
+    <iframe width="100%" height="500px" src="https://docs.microsoft.com" ></iframe>
     
   </main>
 </body>
